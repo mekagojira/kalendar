@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  krakend:
+    network_mode: host
+    image: devopsfaith/krakend:watch
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./krakend.json:/etc/krakend/krakend.json
+    command: run --config /etc/krakend/krakend.json

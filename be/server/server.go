@@ -7,9 +7,9 @@ import (
 
 var Server = gin.Default()
 
-func StartServer() {
+func StartServer(port string) {
 	Server.Use(cors.Default())
 	startController()
 
-	Server.Run()
+	Server.Run(port)
 }

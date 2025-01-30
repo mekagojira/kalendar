@@ -1,7 +1,10 @@
 package main
 
-import "kalendar/server"
+import (
+	"kalendar/lib"
+	"kalendar/server"
+)
 
 func main() {
-	server.StartServer()
+	server.StartServer(lib.GetEnv("PORT", ":9999"))
 }

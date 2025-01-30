@@ -1,0 +1,19 @@
+{
+  "$schema": "https://www.krakend.io/schema/krakend.json",
+  "version": 3,
+  "name": "Kalendar API Gateway",
+  "port": 8080,
+  "endpoints": [
+    {
+      "endpoint": "/{any}",
+      "method": "POST",
+      "backend": [
+        {
+          "host": ["http://localhost:9999"],
+          "url_pattern": "/{any}",
+          "method": "POST"
+        }
+      ]
+    }
+  ]
+}
